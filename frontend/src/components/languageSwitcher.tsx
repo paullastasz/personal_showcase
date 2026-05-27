@@ -49,7 +49,7 @@ function LanguageSwitcher() {
   }
 
   return (
-    <div className='w-50 h-full inline-block text-2xl text-center mt-20 sm:mt-10'>
+    <div className='w-50 h-full inline-block text-2xl text-center mt-20 md:mt-10 max-md:mr-[-20px]'>
     <button onClick={handleDroplist} className='cursor-pointer hover:text-yellow-100 hover:animate-pulse p-2'>{currentLan}</button>
     <div className={isHidden ? 'hidden' : 'absolute bg-[var(--light-color)] shadow-xs min-w-50 z-1 rounded-md'}>
         <ul>
