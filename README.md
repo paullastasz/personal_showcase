@@ -45,7 +45,7 @@ The additionally uploaded font used is the same as it was immediately after down
 
 | Font  name | Credits      | License  | Source |
 |:-----:     |  :--------:  |:--------:|:------:|
-| Babylonica | &copy; 2010 The Babylonica Project Authors   | [SIL Open Font License](/frontend/public/font_families/babylonica/OFL.txt) |
+| Babylonica | &copy; 2010 The Babylonica Project Authors   | [SIL Open Font License](/frontend/public/font_families/babylonica/OFL.txt) | [Link](https://www.1001fonts.com/babylonica-font.html#license) |
 
 ###  Icons
 
