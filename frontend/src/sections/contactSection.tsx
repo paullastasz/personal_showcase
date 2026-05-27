@@ -38,7 +38,7 @@ function ContactSection() {
     <section ref={sectionRef} id="contact" className='h-screen flex flex-col justify-center items-center'>
       <h2 className="text-[4rem] sm:text-[5rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70 pt-15 md:pt-8">{t("contact")}</h2>
       <div className='h-0.5 w-[100dvw] bg-white'></div>
-      <ul className='h-screen grid grid-rows-3 md:grid-cols-3 place-items-centre mt-[20px] md:mt-20 xl:mt-15 ml-[14dvw] md:ml-[6dvw]  lg:ml-[2dvw]  2xl:ml-0'>
+      <ul className='h-screen grid grid-rows-3 md:grid-cols-3 place-items-centre mt-[20px] md:mt-20 xl:mt-15 ml-[25dvw] md:ml-[6dvw]  lg:ml-[2dvw]  2xl:ml-0'>
         <li className='flex flex-col items-start h-25 w-50'>
           <div className='flex flex-row h-full w-full justify-items-center items-center justify-start gap-5'>
               <FontAwesomeIcon icon={faLinkedin} size="2xl" style={{color: "rgb(255, 255, 255)",}} />
