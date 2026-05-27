@@ -70,8 +70,18 @@ function SkillsSection() {
               <div className="w-0.5 h-full bg-black"></div>
           </div>
           <div className='flex flex-col 2xl:mt-2 gap-2'>
+            <p className='text-[12px] md:text-md md:text-lg 2xl:text-lg font-bold not-italic'>Backend</p>
+            <p className='text-[10px] md:text-sm 2xl:text-lg  italic opacity-70'>C# (ASP.NET MVC, ASP.NET Core), Python (FastAPI)</p>
+          </div>
+        </li>
+        <li className='flex flex-row h-32 md:h-30 2xl:h-27'>
+          <div className='flex flex-col items-center mr-1 sm:mr-5'>
+              <div className="w-4 h-4 bg-black rounded-full"></div>
+              <div className="w-0.5 h-full bg-black"></div>
+          </div>
+          <div className='flex flex-col 2xl:mt-2 gap-2'>
             <p className='text-[12px] md:text-md md:text-lg 2xl:text-lg font-bold not-italic'>{t("orm")}</p>
-            <p className='text-[10px] md:text-sm 2xl:text-lg  italic opacity-70'>C# (Entity Framework, Entity Framework Core)</p>
+            <p className='text-[10px] md:text-sm 2xl:text-lg  italic opacity-70'>C# (Entity Framework, Entity Framework Core, LINQ)</p>
           </div>
         </li>
         <li className='flex flex-row h-32 md:h-30 2xl:h-27'>
