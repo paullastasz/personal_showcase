@@ -7,7 +7,7 @@ function LanguageSwitcher() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
   const [isHidden, setHidden] = useState(true);
-  const [currentLan, setCurrentLan] = useState("PL");
+  const [currentLan, setCurrentLan] = useState("EN (US)");
 
   useEffect(() => {
       const lang = localStorage.getItem("lang");
