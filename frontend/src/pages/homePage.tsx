@@ -10,7 +10,7 @@ import HomeSection from '../sections/homeSection'
 function HomePage() {
 
   return (
-    <>
+    <div >
       <HomeSection />
       <ExperienceSection/>
       <EducationSection/>
@@ -19,7 +19,7 @@ function HomePage() {
       <InterestsSection/>
       <ContactSection/>
       <Footer/>
-    </>
+    </div>
   )
 }
 
