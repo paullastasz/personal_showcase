@@ -34,7 +34,7 @@ function CertificatesSection() {
     <section ref={sectionRef} id="certificates" className='h-screen flex flex-col items-center justify-between'>
       <h2 className="text-[5.0rem] sm:text-[6.5rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70 p-8">{t("certificates")}</h2>
       <ul className='flex flex-col gap-5'>
-        <li className='flex flex-row h-130  sm:h-135 2xl:h-100'>
+        <li className='flex flex-row h-130  sm:h-90 2xl:h-100'>
           <div className='flex flex-col items-center mr-5'>
               <div className="w-4 h-4 bg-white rounded-full"></div>
               <div className="w-0.5 h-full bg-white"></div>

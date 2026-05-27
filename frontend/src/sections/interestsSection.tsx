@@ -47,7 +47,7 @@ function InterestsSection() {
     }, []);
   
   return (
-    <section ref={sectionRef} id="interests" className='h-full bg-white text-black flex flex-col items-center justify-between'>
+    <section ref={sectionRef} id="interests" className='h-full min-h-screen bg-white text-black flex flex-col items-center justify-between'>
       <h2 className="text-[4rem] sm:text-[5rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70 p-8">{t("interests")}</h2>
       <div className="flex flex-col gap-20 text-center ml-5 mr-5 2xl:ml-40 2xl:mr-40">
         <p className="text-md 2xl:text-xl font-light italic">{t("interest_description")} </p>

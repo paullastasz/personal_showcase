@@ -35,7 +35,7 @@ function ExperienceSection() {
     <section ref={sectionRef} id="experience" className='h-full  lg:h-screen bg-white text-black flex flex-col items-center justify-between'>
       <h2 className="text-[3rem] sm:text-[6rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70 p-12 sm:p-8">{t("experience")}</h2>
       <ul className='flex flex-col gap-5'>
-        <li className='flex flex-row h-130 md:h-70'>
+        <li className='flex flex-row h-130 md:h-90'>
           <div className='flex flex-col items-center mr-5'>
               <div className="w-4 h-4 bg-black rounded-full"></div>
               <div className="w-0.5 h-full bg-black"></div>

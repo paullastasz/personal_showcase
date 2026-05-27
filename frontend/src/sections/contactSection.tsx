@@ -35,7 +35,7 @@ function ContactSection() {
     }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className='h-screen flex flex-col justify-center items-center'>
+    <section ref={sectionRef} id="contact" className='h-screen min-h-screen flex flex-col justify-center items-center'>
       <h2 className="text-[4rem] sm:text-[5rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70">{t("contact")}</h2>
       <div className='h-0.5 w-[98dvw] bg-white'></div>
       <ul className='grid max-lg:grid-rows-3 lg:grid-cols-3 place-items-centre mt-[30px] md:mt-20 xl:mt-15 max-lg:gap-y-7'>

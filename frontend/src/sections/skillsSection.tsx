@@ -31,7 +31,7 @@ function SkillsSection() {
     }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className='h-full bg-white text-black flex flex-col items-center justify-between'>
+    <section ref={sectionRef} id="skills" className='h-full min-h-screen bg-white text-black flex flex-col items-center justify-between'>
       <h2 className="text-[4rem] sm:text-[6rem] lg:text-[5rem] 2xl:text-[7rem] babylonica-r text-shadow-xs/70 p-2">{t("skills")}</h2>
       <ul className='grid grid-cols-2  md:grid-cols-4 gap-1 ml-[2vw] md:ml-[6vw] max-md:mt-10 max-md:ml-5 max-md:mr-5 md:mr-[6vw]'>
         <li className='flex flex-row h-32 md:h-30 2xl:h-27'>
