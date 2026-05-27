@@ -1,0 +1,11 @@
+.babylonica-r {
+    font-family: 'babylonica-r';
+}
+
+
+@font-face {
+  font-family: 'babylonica-r';
+  src: url('../font_families/babylonica/Babylonica-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
