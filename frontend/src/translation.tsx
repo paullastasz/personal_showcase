@@ -31,7 +31,7 @@ i18n.use(initReactI18next).init({
         game_engines: "Silniki gier",
         testing: "Testowanie",
         unit_tests: "Testy jednostkowe",
-        formats: "Format danych",
+        format: "Format danych",
         operating_systems: "Systemy operacyjne",
         vcs: "Systemy kontroli wersji",
         tools_ides_platforms: "Narzędzia, IDE i platformy",

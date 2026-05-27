@@ -32,7 +32,7 @@ function HomeSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className='h-full  lg:h-screen grid grid:cols-2 grid:rows-2 sm:gap-y-5 md:gap-y-5 lg:gap-y-8 xl:gap-y-20 2xl:gap-y-5'>
+    <section ref={sectionRef} id="home" className='h-full  lg:h-screen grid grid:cols-2 grid:rows-2 sm:gap-y-5 md:gap-y-5 lg:gap-y-8 xl:gap-y-10 2xl:gap-y-5'>
         <div className="flex flex-col items-end">
           <LanguageSwitcher/>
         </div>
