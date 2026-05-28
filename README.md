@@ -4,7 +4,8 @@ The landing page app for portfolios, personal showcases or CVs. It includes Poli
 
 ## Hosting
 
-You can see the website online at this address *https://paulla-stasz.onrender.com*.
+You can see the website online at this address *https://paulla-stasz.onrender.com*. 
+Hosting is thanks to the service on server *render.com*.
 
 ## Launching the application
 
