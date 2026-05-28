@@ -1,21 +1,39 @@
 
 import { useEffect, useState } from 'react';
-import '../assets/css/font.css'
+import '../assets/css/font.css';
 import { useTranslation } from "react-i18next";
 
 function LanguageSwitcher() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
   const [isHidden, setHidden] = useState(true);
-  const [currentLan, setCurrentLan] = useState("EN (US)");
+  const [currentLan, setCurrentLan] = useState("");
 
   useEffect(() => {
-      const lang = localStorage.getItem("lang");
-      if (lang != null)
+      const currentLang = localStorage.getItem("lang"); 
+      const systemLang = i18n.language;
+
+      // after refreshing the page
+      if (currentLang != null)
       {
-         setCurrentLan(lang);
-         i18n.changeLanguage("PL" === lang ? "pl" : "en_us");
-      }   
+         
+         setCurrentLan(currentLang.split("-")[0] === "pl" ? "PL" : "EN (US)");
+         console.log(i18n.language);
+         i18n.changeLanguage(currentLang.split("-")[0] === "pl" ? "pl-PL" : "en-US");
+      }
+      // first entry at all
+      else
+      {
+         localStorage.setItem("lang", systemLang.split("-")[0] === "pl" ? "pl-PL" : "en-US");
+      }
+
+      const lang = document.getElementById("lang");
+
+     if (lang !== null)
+     {   
+        lang.lang = systemLang;
+     }
+      
   
    }, []);
 
@@ -25,26 +43,31 @@ function LanguageSwitcher() {
   }
 
   const handlePl = (): void => {
-     i18n.changeLanguage("pl");
+     const plCode = "pl-PL";
+     i18n.changeLanguage(plCode);
      const lang = document.getElementById("lang");
-     localStorage.setItem("lang", "PL");
+
      if (lang !== null)
      {   
-        lang.lang = "pl";
+        lang.lang = plCode;
      }
+
      setCurrentLan("PL");
+     localStorage.setItem("lang", plCode);
      setHidden(!isHidden);
   }
 
   const handleEnUs = (): void => {
-     i18n.changeLanguage("en_us");
+     const enCode = "en-US";
+     i18n.changeLanguage(enCode);
      const lang = document.getElementById("lang");
      localStorage.setItem("lang", "EN (US)");
      if (lang !== null)
      {   
-        lang.lang = "en-US";
+        lang.lang = enCode;
      }
      setCurrentLan("EN (US)");
+     localStorage.setItem("lang", enCode);
      setHidden(!isHidden);
   }
 

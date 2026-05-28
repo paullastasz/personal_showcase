@@ -1,9 +1,14 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-i18n.use(initReactI18next).init({
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+  fallbackLng: "en-US",
   resources: {
-    pl: {
+    "pl-PL": {
       translation: {
         experience: "Doświadczenie",
         education: "Wykształcenie",
@@ -51,7 +56,7 @@ i18n.use(initReactI18next).init({
         copyright_rule: "Wszelkie prawa zastrzeżone.",
       }
     },
-    en_us: {
+    "en-US": {
       translation: {
         experience: "Experience",
         education: "Education",
@@ -100,7 +105,6 @@ i18n.use(initReactI18next).init({
       }
     }
   },
-  lng: "en_us"
 });
 
 export default i18n;

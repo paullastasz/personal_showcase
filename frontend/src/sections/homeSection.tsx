@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import LanguageSwitcher from "../components/languageSwitcher"
-import Name from "../components/name"
-import Nav from "../components/nav"
+import LanguageSwitcher from "../components/languageSwitcher";
+import Name from "../components/name";
+import Nav from "../components/nav";
 import { useNavigate } from "react-router-dom";
 
 
