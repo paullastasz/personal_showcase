@@ -56,10 +56,11 @@ function LanguageSwitcher() {
   }
 
    useEffect(() => {
-      const systemLang: Language = {
-         LANG_CODE: i18n.language,
-         NORMALIZED_LAN: "",
-      };
+      const systemLang: Language = i18n.language === PL_LANG.LANG_CODE || i18n.language === PL_PL_LANG.LANG_CODE ? 
+                        PL_LANG : 
+                        (i18n.language === EN_LANG.LANG_CODE || i18n.language === EN_US_LANG.LANG_CODE ? 
+                           EN_LANG : 
+                              DEFAULT_LANG);
       
       handleLangChange(systemLang);
 
