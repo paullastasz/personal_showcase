@@ -48,7 +48,7 @@ function LanguageSwitcher() {
  
   const handleLangChangeBySwitcher = (lang: Language): void => {
      i18n.changeLanguage(lang.LANG_CODE);
-     localStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
+     sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
  
      handleLangChange(lang);
 
@@ -67,19 +67,19 @@ function LanguageSwitcher() {
    }, []);
 
   return (
-    <div className='relative inline-block mt-20 mr-5 text-center text-2xl sm:mt-10 sm:mr-10 sm:w-50 w-30'>
+    <div className='relative inline-block mt-20 mr-5 text-center text-2xl sm:mt-10 sm:mr-10 sm:w-50 w-30 z-10'>
     <button onClick={handleDroplist} 
             aria-label={t("choose_lan")}
             aria-expanded={!isHidden}
             aria-haspopup="true"
-            className={`menu-option w-full cursor-pointer p-2 ${isHidden ? "" : "bg-[var(--dark-color)]"}`}>{currentLan}
+            className={`menu-option w-full p-3 sm:p-2 ${isHidden ? "" : "bg-[var(--dark-color)]"}`}>{currentLan}
    </button>
-    <div className={`absolute left-0 top-full z-10 w-full overflow-hidden bg-[var(--light-color)]/12 shadow-xs backdrop-blur-md ${isHidden ? "hidden" : ""}`}>
+    <div className={`absolute left-0 top-full w-full overflow-hidden bg-[var(--light-color)]/12 shadow-xs backdrop-blur-md ${isHidden ? "hidden" : ""}`}>
         <ul>
             <li><button onClick={() => handleLangChangeBySwitcher(PL_LANG)} 
-                        className='menu-option block w-full cursor-pointer p-2 hover:bg-[var(--dark-color)]'>PL</button></li>
+                        className='menu-option block w-full p-3 sm:p-2 hover:bg-[var(--dark-color)]'>PL</button></li>
             <li><button onClick={() => handleLangChangeBySwitcher(EN_LANG)} 
-                        className='menu-option block w-full cursor-pointer p-2 hover:bg-[var(--dark-color)]'>EN</button></li>
+                        className='menu-option block w-full p-3 sm:p-2 hover:bg-[var(--dark-color)]'>EN</button></li>
         </ul>
     </div>
     </div>

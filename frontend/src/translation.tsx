@@ -25,7 +25,7 @@ i18n
     },
 
     detection: {
-      order: ["localStorage", "navigator", "htmlTag"],
+      order: ["sessionStorage", "navigator", "htmlTag"],
       lookupLocalStorage: LANG_STORAGE_KEY,
       caches: [],
     },
