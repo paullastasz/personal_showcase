@@ -1,0 +1,10 @@
+@keyframes show-up {
+  0%   {opacity: 0.0; transform: translateY(10%);}
+  100% {opacity: 1.0; transform: none;}
+}
+
+.animation-show-up {
+  animation-name: show-up;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
