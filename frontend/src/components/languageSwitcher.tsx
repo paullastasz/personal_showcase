@@ -14,15 +14,22 @@ function LanguageSwitcher() {
       const langHtmlElement = document.getElementById("lang");
 
       switch (lang) {
-            case PL_LANG_CODE || PL_PL_LANG_CODE || EN_LANG_CODE || EN_US_LANG_CODE:
-               setCurrentLan(lang.toUpperCase());
-               if (langHtmlElement !== null) langHtmlElement.lang = lang;
-               setCurrentLan(lang.toUpperCase());
-               break;
-            default:
-               setCurrentLan(DEFAULT_LANG.toUpperCase());
-               if (langHtmlElement !== null) langHtmlElement.lang = DEFAULT_LANG;
-               setCurrentLan(DEFAULT_LANG.toUpperCase()); 
+         case PL_LANG_CODE:
+         case PL_PL_LANG_CODE:
+         case EN_LANG_CODE:
+         case EN_US_LANG_CODE:
+            setCurrentLan(lang.toUpperCase());
+            if (langHtmlElement !== null) {
+                  langHtmlElement.lang = lang;
+            }
+            break;
+
+         default:
+            setCurrentLan(DEFAULT_LANG.toUpperCase());
+            if (langHtmlElement !== null) {
+                  langHtmlElement.lang = DEFAULT_LANG;
+            }
+            break;
       }
 
       const meta_description = document.getElementById("meta_description");
