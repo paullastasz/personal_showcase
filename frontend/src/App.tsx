@@ -11,6 +11,7 @@ function App() {
 
   const finishLoading = useCallback(() => {
     setIsLoading(false);
+    document.documentElement.classList.add("app-loaded");
   }, []);
 
   return (

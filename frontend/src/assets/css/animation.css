@@ -7,4 +7,17 @@
   animation-name: show-up;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.app-loaded .animation-show-up {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation-show-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
