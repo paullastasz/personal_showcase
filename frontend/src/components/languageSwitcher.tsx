@@ -2,90 +2,57 @@
 import { useEffect, useState } from 'react';
 import '../assets/css/font.css';
 import { useTranslation } from "react-i18next";
-import { LANG_STORAGE_KEY } from '../config/constants';
+import { DEFAULT_LANG, EN_LANG_CODE, EN_US_LANG_CODE, LANG_STORAGE_KEY, PL_LANG_CODE, PL_PL_LANG_CODE } from '../config/constants';
 
 function LanguageSwitcher() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
   const [isHidden, setHidden] = useState(true);
   const [currentLan, setCurrentLan] = useState("");
- 
-  useEffect(() => {
-      const currentLang = localStorage.getItem(LANG_STORAGE_KEY); 
-      const systemLang = i18n.language;
-      const meta_description = document.getElementById("meta_description");
- 
-      if (currentLang != null)
-      {
-         setCurrentLan(currentLang.split("-")[0] === "pl" ? "PL" : "EN");
-         i18n.changeLanguage(currentLang.split("-")[0] === "pl" ? "pl-PL" : "en-US");
+
+  const handleLangChange = (lang: string): void => {
+      const langHtmlElement = document.getElementById("lang");
+
+      switch (lang) {
+            case PL_LANG_CODE || PL_PL_LANG_CODE || EN_LANG_CODE || EN_US_LANG_CODE:
+               setCurrentLan(lang.toUpperCase());
+               if (langHtmlElement !== null) langHtmlElement.lang = lang;
+               setCurrentLan(lang.toUpperCase());
+               break;
+            default:
+               setCurrentLan(DEFAULT_LANG.toUpperCase());
+               if (langHtmlElement !== null) langHtmlElement.lang = DEFAULT_LANG;
+               setCurrentLan(DEFAULT_LANG.toUpperCase()); 
       }
 
-      else
-      {
-         setCurrentLan(systemLang.split("-")[0] === "pl" ? "PL" : "EN");
-      }
- 
-      const lang = document.getElementById("lang");
- 
-     if (lang !== null)
-     {   
-        lang.lang = systemLang;
-     }
- 
-     meta_description?.setAttribute(
+      const meta_description = document.getElementById("meta_description");
+
+      meta_description?.setAttribute(
       "content",
       t("meta_description")
      );
-   }, []);
+  }
  
  
   const handleDroplist = (): void => {
       setHidden(!isHidden);
   }
  
-  const handlePl = (): void => {
-     const plCode = "pl-PL";
-     i18n.changeLanguage(plCode);
-     const lang = document.getElementById(LANG_STORAGE_KEY);
-     const meta_description = document.getElementById("meta_description");
+  const handleLangChangeBySwitcher = (code: string): void => {
+     i18n.changeLanguage(code);
+     localStorage.setItem(LANG_STORAGE_KEY, code);
  
-     if (lang !== null)
-     {   
-        lang.lang = plCode;
-     }
- 
-     meta_description?.setAttribute(
-      "content",
-      t("meta_description")
-     );
- 
-     setCurrentLan("PL");
+     handleLangChange(code);
 
-     localStorage.setItem(LANG_STORAGE_KEY, plCode);
      setHidden(!isHidden);
   }
- 
-  const handleEnUs = (): void => {
-     const enCode = "en-US";
-     i18n.changeLanguage(enCode);
-     const lang = document.getElementById("lang");
-     const meta_description = document.getElementById("meta_description");
- 
-     if (lang !== null)
-     {   
-        lang.lang = enCode;
-     }
- 
-     setCurrentLan("EN");
-     localStorage.setItem(LANG_STORAGE_KEY, enCode);
-     setHidden(!isHidden);
- 
-     meta_description?.setAttribute(
-      "content",
-      t("meta_description")
-     );
-  }
+
+   useEffect(() => {
+      const systemLang = i18n.language;
+      
+      handleLangChange(systemLang);
+
+   }, []);
 
   return (
     <div className='relative inline-block mt-20 mr-5 text-center text-2xl sm:mt-10 sm:mr-10 sm:w-50 w-30'>
@@ -97,9 +64,9 @@ function LanguageSwitcher() {
    </button>
     <div className={`absolute left-0 top-full z-10 w-full overflow-hidden bg-[var(--light-color)]/12 shadow-xs backdrop-blur-md ${isHidden ? "hidden" : ""}`}>
         <ul>
-            <li><button onClick={handlePl} 
+            <li><button onClick={() => handleLangChangeBySwitcher(PL_LANG_CODE)} 
                         className='menu-option block w-full cursor-pointer p-2 hover:bg-[var(--dark-color)]'>PL</button></li>
-            <li><button onClick={handleEnUs} 
+            <li><button onClick={() => handleLangChangeBySwitcher(EN_LANG_CODE)} 
                         className='menu-option block w-full cursor-pointer p-2 hover:bg-[var(--dark-color)]'>EN</button></li>
         </ul>
     </div>

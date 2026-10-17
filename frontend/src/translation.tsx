@@ -4,28 +4,24 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import en_US from "./locales/en-US/resources.json";
 import pl_PL from "./locales/pl-PL/resources.json";
-import { LANG_STORAGE_KEY } from "./config/constants";
+import { DEFAULT_LANG, EN_LANG_CODE, EN_US_LANG_CODE, LANG_STORAGE_KEY, PL_LANG_CODE, PL_PL_LANG_CODE } from "./config/constants";
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
 
-    supportedLngs: ["pl", "pl-PL", "en", "en-US"],
+    supportedLngs: [PL_LANG_CODE, PL_PL_LANG_CODE, EN_LANG_CODE, EN_US_LANG_CODE],
 
-    fallbackLng: "en-US",
+    fallbackLng: DEFAULT_LANG,
 
     load: "currentOnly",
 
     resources: {
-      "pl": { translation: pl_PL },
-      "pl-PL": {
-        translation: pl_PL,
-      },
-      "en": { translation: en_US },
-      "en-US": {
-        translation: en_US,
-      },
+      [PL_LANG_CODE]:    { translation: pl_PL },
+      [PL_PL_LANG_CODE]: { translation: pl_PL },
+      [EN_LANG_CODE]:    { translation: en_US },
+      [EN_US_LANG_CODE]: { translation: en_US },
     },
 
     detection: {
