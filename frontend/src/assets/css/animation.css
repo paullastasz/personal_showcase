@@ -1,16 +1,22 @@
 @keyframes show-up {
-  0%   {opacity: 0.0; transform: translateY(10%);}
-  100% {opacity: 1.0; transform: none;}
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .animation-show-up {
-  animation-name: show-up;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  opacity: 0;
+  animation: show-up 1.5s ease forwards;
   animation-play-state: paused;
 }
 
-.app-loaded .animation-show-up {
+.app-loaded .animation-show-up.is-visible {
   animation-play-state: running;
 }
 

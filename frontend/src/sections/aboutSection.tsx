@@ -1,39 +1,15 @@
-import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 
 function AboutSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-  
-  const navigate = useNavigate();
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const observer = new IntersectionObserver((entries) =>
-            entries.forEach((entry) => {
-              if (entry.isIntersecting === true && entry.intersectionRatio >= 0.5)
-              {  
-                navigate('/#about');
-              }
-            })
-          );
-  
-        observer.observe(sectionRef.current!);
-        return () => {
-          observer.disconnect();
-        };
-    }, 500); 
-
-    return () => clearInterval(interval);
-
-    }, []);
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#about');
 
   return (
-    <section ref={sectionRef} id="about" aria-labelledby="about-heading" className='min-h-screen bg-white text-black flex flex-col items-center p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24'>
-      <h2 id="about-heading" className="header-2 header-2-with-dark-line header-2-with-shadow-line animation-show-up text-center"><span>{t("about")}</span></h2>
-      <div className="animation-show-up mt-12 mb-6 mx-4 sm:mt-16 sm:mx-6 md:mt-20 md:mb-8 md:mx-8 lg:mt-24 lg:mb-12 lg:mx-12 xl:mt-32 xl:mx-16 2xl:mt-40 2xl:mb-24 2xl:mx-24">
+    <section ref={sectionRef} id="about" aria-labelledby="about-heading" className='relative min-h-screen bg-white text-black flex flex-col items-center p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24'>
+      <h2 id="about-heading" className={`header-2 header-2-with-dark-line header-2-with-shadow-line animation-show-up ${isVisible ? "is-visible" : "" } text-center`}><span>{t("about")}</span></h2>
+      <div className={`animation-show-up ${isVisible ? "is-visible" : "" } mt-12 mb-6 mx-4 sm:mt-16 sm:mx-6 md:mt-20 md:mb-8 md:mx-8 lg:mt-24 lg:mb-12 lg:mx-12 xl:mt-32 xl:mx-16 2xl:mt-40 2xl:mb-24 2xl:mx-24`}>
         <div className="bg-white w-full">
           <p className="small-text text-center mb-4 mx-4 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-32">{t("about_description")}</p>
           <div aria-hidden="true" className="w-full h-[1px] bg-black/10" />

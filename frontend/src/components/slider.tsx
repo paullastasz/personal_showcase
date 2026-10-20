@@ -7,13 +7,11 @@ interface SliderProps {
 
 function Slider({ images, alt }: SliderProps) {
   // @ts-ignore
-  const [index, setIndex] = useState(1);
-  const [image, setImage] = useState(images[0]);
+  const [index, setIndex] = useState(0);
 
    useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prev => {
-        setImage(images[prev]);
         let temp: number = prev + 1;
 
         if (temp >= images.length)
@@ -26,11 +24,16 @@ function Slider({ images, alt }: SliderProps) {
     return () => clearInterval(interval);
   }, []);
 
+  if (images.length === 0) return null;
+
   return (
-        <img src={image}   
+        <img src={images[index]}   
              alt={alt} 
              loading="lazy"
-             className={`object-cover w-100 h-100 rounded-t-lg drop-shadow-2xl`}></img>
+             decoding="async"
+             width="600"
+             height="1200"
+             className={`object-cover w-100 h-100 rounded-t-lg drop-shadow-2xl`}/>
   )
 }
 

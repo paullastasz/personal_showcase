@@ -1,17 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import { skillTypes } from "../data/skillType";
 import { skills} from "../data/skills";
 import SideMenu, { HeightLine, ThemeColor } from "../components/sideMenu";
+import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 
 function SkillsSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#skills');
   
-  const navigate = useNavigate();
-  const sectionRef = useRef<HTMLDivElement | null>(null);
   const listRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
@@ -23,28 +22,6 @@ function SkillsSection() {
 
   const [activeType, setActiveType] = useState<number>(1);
   const getItemKey = (copy: number, id: string | number) => `${copy}-${id}`;
-
-
-  useEffect(() => {
-      const interval = setInterval(() => {
-          const observer = new IntersectionObserver((entries) =>
-          entries.forEach((entry) => {
-            if (entry.isIntersecting === true && entry.intersectionRatio >= 0.5)
-            {  
-              navigate('/#skills');
-            }
-          })
-        );
-
-      observer.observe(sectionRef.current!);
-      return () => {
-        observer.disconnect();
-      };
-  }, 500); 
-
-  return () => clearInterval(interval);
-
-  }, []);
 
   const computeOffset = () => {
     const container = listRef.current;
@@ -106,7 +83,7 @@ function SkillsSection() {
             aria-labelledby="skills-heading"
             className="min-h-screen bg-[--dark-color] text-white flex flex-col items-center px-3 py-6 min-[375px]:px-4 sm:px-6 sm:py-8 md:px-8 md:py-14 lg:px-12 lg:py-16 xl:px-16 2xl:px-24">
       <h2 id="skills-heading"
-          className="header-2 header-2-with-white-line animation-show-up text-center">
+          className={`header-2 header-2-with-white-line animation-show-up ${isVisible ? "is-visible" : "" } text-center`}>
         <span>{t("skills")}</span>
       </h2>
 
@@ -124,7 +101,7 @@ function SkillsSection() {
         </div>
 
         <div ref={listRef}
-            className="relative mt-0 mb-2 h-fit min-h-0 min-w-0 w-full max-w-full overflow-hidden min-[601px]:mt-5 min-[640px]:mt-24 sm:mb-0 sm:min-h-[180px] sm:max-h-[65vh] md:min-h-[320px] md:max-h-[75vh] lg:max-h-[80vh]"
+            className={`relative mt-0 mb-2 h-fit min-h-0 min-w-0 w-full max-w-full overflow-hidden min-[601px]:mt-5 min-[640px]:mt-24 sm:mb-0 sm:min-h-[180px] sm:max-h-[65vh] md:min-h-[320px] md:max-h-[75vh] lg:max-h-[80vh] animation-show-up ${isVisible ? "is-visible" : "" }`}
             style={
               isMobile
                 ? {

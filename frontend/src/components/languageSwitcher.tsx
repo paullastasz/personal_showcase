@@ -33,11 +33,27 @@ function LanguageSwitcher() {
             break;
       }
 
-      const meta_description = document.getElementById("meta_description");
+      const ogTitle = document.querySelector('meta[property="og:title"]');
 
-      meta_description?.setAttribute(
+      document.title = t("meta_title");
+
+     ogTitle?.setAttribute(
+      "content",
+      t("meta_title")
+     );
+
+      const description = document.querySelector('meta[name="description"]');
+
+      description?.setAttribute(
       "content",
       t("meta_description")
+     );
+
+     const ogLocale = document.querySelector('meta[property="og:locale"]');
+
+     ogLocale?.setAttribute(
+      "content",
+      lang.LANG_CODE
      );
   }
  

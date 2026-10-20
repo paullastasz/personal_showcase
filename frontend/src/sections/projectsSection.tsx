@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { categoryProjects } from "../data/categoryProject";
@@ -7,35 +6,14 @@ import { projects } from "../data/projects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 import SideMenu, { HeightLine, ThemeColor } from "../components/sideMenu";
+import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 
 function ProjectsSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-
-  const navigate = useNavigate();
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#projects', 0.2);
 
   const [activeCategory, setActiveCategory] = useState<number>(0);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-            navigate("/#projects", { replace: true });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, [navigate]);
 
   const categories = [{ id: 0 as const, name: t("all") }, ...categoryProjects.map((category) => ({
       id: category.id,
@@ -48,8 +26,11 @@ function ProjectsSection() {
     <section ref={sectionRef}
             id="projects"
             aria-labelledby="projects-heading"
-            className="min-h-screen overflow-hidden bg-white text-black flex flex-col items-center px-3 py-6 min-[375px]:px-4 sm:px-6 sm:py-8 md:px-8 md:py-14 lg:px-12 lg:py-16 xl:px-16 2xl:px-24">
-      <h2 id="projects-heading" className="header-2 header-2-with-dark-line header-2-with-shadow-line animation-show-up text-center"><span>{t("projects")}</span></h2>
+            className="relative min-h-screen overflow-hidden bg-white text-black flex flex-col items-center px-3 py-6 min-[375px]:px-4 sm:px-6 sm:py-8 md:px-8 md:py-14 lg:px-12 lg:py-16 xl:px-16 2xl:px-24">
+      <h2 id="projects-heading" 
+          className={`header-2 header-2-with-dark-line header-2-with-shadow-line animation-show-up ${isVisible ? "is-visible" : "" } text-center`}>
+          <span>{t("projects")}</span>
+      </h2>
 
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-2 pb-6 min-[375px]:gap-3 min-[601px]:gap-5 sm:grid-cols-[140px_minmax(0,1fr)] sm:gap-4 sm:px-2 sm:pb-8 md:grid-cols-[180px_minmax(0,1fr)] md:gap-8 md:px-4 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12 lg:px-6 xl:gap-16 xl:px-8">
         <div className="relative z-10 w-full min-w-0 max-w-full">
@@ -61,7 +42,7 @@ function ProjectsSection() {
                     heightLine={HeightLine.NotFull} />
         </div>
 
-        <div className="min-w-0 w-full max-w-full mt-0 min-[601px]:mt-5 min-[640px]:mt-24">
+        <div className={`min-w-0 w-full max-w-full mt-0 min-[601px]:mt-5 min-[640px]:mt-24 animation-show-up ${isVisible ? "is-visible" : "" }`}>
           <div className="grid grid-cols-1 gap-4 sm:gap-5">
             {visibleProjects.length === 0
               ? <div className="flex min-h-[40dvh] items-center justify-center info-text">{t("no_content")}</div>
