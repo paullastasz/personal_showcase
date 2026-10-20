@@ -8,5 +8,6 @@ export interface Project {
   link?: string;
   repoLink?: string;
   repoIconDef?: IconDefinition;
+  video?: string;
   category: number;
 }

@@ -77,11 +77,26 @@ function ProjectsSection() {
                         title={t(project.nameWithTranslation)}
                         loading="lazy"
                         className="h-full w-full border-0 bg-white"/>
-                    ) : (
+                    ) : ( project.video ? (
+                        <video key={project.id} 
+                               controls 
+                               preload="metadata"  
+                               playsInline
+                               style={{ width: "100%", height: "100%" }}>
+                          <source src={project.video} 
+                                  type="video/mp4"
+                                  style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "contain",
+                                  }} />
+                          {t("no_preview")}
+                        </video>
+                     ) : (
                       <div className="flex h-full items-center justify-center info-text">
                         {t("no_preview")}
                       </div>
-                    )}
+                    ))}
                   </div>
 
                   <div className="flex items-start justify-between gap-3 p-3 min-[375px]:p-4 sm:gap-4 sm:p-5">

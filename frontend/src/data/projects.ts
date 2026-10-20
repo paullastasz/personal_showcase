@@ -9,7 +9,7 @@ export const projects: Project[] = [
     technologies: "Figma",
     category: 1,
   },
-    {
+  {
     id: 2,
     nameWithTranslation: "project_2_name",
     link: "https://paulla-stasz.onrender.com/",
@@ -17,5 +17,12 @@ export const projects: Project[] = [
     repoIconDef: faGithub,
     technologies: "React i TypeScript",
     category: 2,
+  },
+  {
+    id: 3,
+    nameWithTranslation: "project_3_name",
+    video: "/videos/bf13cdf2-67d9-485e-a198-d957febbd0b4.mp4",
+    technologies: "Unreal Engine",
+    category: 4,
   },
 ];
