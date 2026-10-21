@@ -1,5 +1,4 @@
 import SkillsSection from '../sections/skillsSection';
-import InterestsSection from '../sections/interestsSection';
 import ContactSection from '../sections/contactSection';
 import Footer from '../components/footer';
 import HomeSection from '../sections/homeSection';
@@ -17,7 +16,6 @@ function HomePage() {
       <AboutSection />
       <SkillsSection/>
       <ProjectsSection/>
-      <InterestsSection/>
       <ContactSection/>
     </main>
     <Footer/>

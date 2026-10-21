@@ -9,3 +9,7 @@
   src: url('/font_families/Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.ttf') format('truetype');
   font-display: swap;
 }
+
+.cc {
+  font-family: 'AlumniSansPinstripe';
+}

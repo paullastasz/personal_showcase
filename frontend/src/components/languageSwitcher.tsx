@@ -55,6 +55,13 @@ function LanguageSwitcher() {
       "content",
       lang.LANG_CODE
      );
+
+     const ogImage = document.querySelector('meta[property="og:image"]');
+
+     ogImage?.setAttribute(
+      "content",
+      t("og_image")
+     );
   }
  
  

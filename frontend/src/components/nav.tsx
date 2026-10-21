@@ -11,7 +11,6 @@ function Nav() {
         <li className='menu-option'><HashLink smooth to="#about">{t("about")}</HashLink></li>
         <li className='menu-option'><HashLink smooth to="#skills">{t("skills")}</HashLink></li>
         <li className='menu-option'><HashLink smooth to="#projects">{t("projects")}</HashLink></li>
-        <li className='menu-option'><HashLink smooth to="#interests">{t("interests")}</HashLink></li>
         <li className='menu-option'><HashLink smooth to="#contact">{t("contact")}</HashLink></li>
       </ul>
     </nav>

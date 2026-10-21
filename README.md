@@ -57,8 +57,6 @@ frontend
 └───src
     ├───assets
     │   ├───css - css files (page appearance and animations)
-    │   └───images
-    │       └───drawings - drawings for the slider
     ├───components - reusable elements
     ├───pages - web pages
     └───sections - sections available on web pages
@@ -92,11 +90,6 @@ Icons used unchanged (with the possible exception of color and size):
 |:-----:     |  :--------:|:------:|
 | [7794279-uhd_3840_2160_25fps.mp4](/frontend/public/videos/7794279-uhd_3840_2160_25fps.mp4) | [Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/abstrakcyjny-pomarancza-ruch-farba-7794279/) |
 
-### Images
-
-The image slider used images drawn by the repository author based on references from the Internet (mainly Pinterest and Google Images).
-
-[Take me to the slider images folder](/frontend/src/assets/images/drawings/)
 
 ### Personal data
 
