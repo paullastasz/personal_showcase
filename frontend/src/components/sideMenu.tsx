@@ -34,7 +34,7 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
   
   return (
     <aside aria-label={ariaLabel} className="relative z-20 w-full self-start md:pt-2">
-    <div className="relative min-[601px]:hidden">
+    <div className="relative min-[640px]:hidden">
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -94,7 +94,9 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
                       ? themeColor === ThemeColor.Dark
                         ? "font-semibold text-[var(--dark-color)]"
                         : "font-semibold text-[var(--white-color)]"
-                      : "text-neutral-700"}`}>
+                      : themeColor === ThemeColor.Dark
+                          ? "text-neutral-700"
+                          : "text-neutral-300"}`}>
                   {item.name}
                 </span>
               </button>
@@ -104,7 +106,7 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
       )}
     </div>
 
-    <div className="hidden min-[601px]:block">
+    <div className="hidden min-[640px]:block">
       <div className="relative">
         <div aria-hidden="true"
             className={`absolute left-[5px] w-[2.5px] ${
@@ -146,7 +148,7 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
                           : "text-text-white"}`
                     : themeColor === ThemeColor.Dark
                           ? "text-neutral-600 group-hover"
-                          : "text-neutral-300 md:text-neutral-400 group-hover"}`} >
+                          : "text-neutral-400 group-hover"}`} >
                 {item.name}
               </span>
             </button>
