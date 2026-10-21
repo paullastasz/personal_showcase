@@ -20,10 +20,6 @@ function LanguagePage() {
     {
         codeLang = systemLang;
     }
-    if(codeLang !== systemLang)
-    {
-      i18n.changeLanguage(codeLang);
-    }
 
     const currentLang = window.location.pathname.split('/')[1];
 
@@ -32,6 +28,11 @@ function LanguagePage() {
 
     if (currentLang !== codeLang) {
       window.location.href = targetUrl;
+    }
+
+    if(codeLang !== systemLang)
+    {
+      i18n.changeLanguage(codeLang);
     }
     
   }, []);
