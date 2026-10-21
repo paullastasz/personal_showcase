@@ -101,7 +101,6 @@
   font-family: var(--font-basic);
   font-size: 0.75rem; /* screen width: < 640px */
   cursor: default;
-  font-weight: 100;
 }
 
 @media (min-width: 640px) { /* sm: screen width >= 640px */
