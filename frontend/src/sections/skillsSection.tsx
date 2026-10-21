@@ -9,7 +9,7 @@ import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 function SkillsSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#skills');
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('skills');
   
   const listRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());

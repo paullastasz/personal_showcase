@@ -11,7 +11,7 @@ import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 function ProjectsSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#projects', 0.2);
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('projects', 0.2);
 
   const [activeCategory, setActiveCategory] = useState<number>(0);
 

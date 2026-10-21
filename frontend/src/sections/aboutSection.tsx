@@ -4,7 +4,7 @@ import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 function AboutSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#about');
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('about');
 
   return (
     <section ref={sectionRef} id="about" aria-labelledby="about-heading" className='relative min-h-screen bg-white text-black flex flex-col items-center p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24'>

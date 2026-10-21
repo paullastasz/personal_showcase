@@ -2,9 +2,8 @@ import './App.css';
 
 import { Routes, Route, Navigate } from "react-router-dom"
 import { useCallback, useState } from 'react';
-
-import HomePage from './pages/homePage'
 import Preloader from "./components/preloader";
+import LanguagePage from './pages/languagePage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +18,8 @@ function App() {
       {isLoading && <Preloader onComplete={finishLoading} />}
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LanguagePage />} />
+        <Route path="/:lang" element={<LanguagePage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

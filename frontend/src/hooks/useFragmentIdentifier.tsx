@@ -14,7 +14,16 @@ export function useFragmentIdentifier<T extends HTMLElement>(identifier: string,
             entries.forEach((entry) => {
               if (entry.isIntersecting === true && entry.intersectionRatio >= visibilityThreshold)
               {  
-                navigate(identifier);
+                
+                navigate(
+                  {
+                    pathname: location.pathname,
+                    search: location.search,
+                    hash: identifier.replace(/^#/, ""),
+                  },
+                  { replace: true }
+                );
+
                 setIsVisible(true);
               }
             }),

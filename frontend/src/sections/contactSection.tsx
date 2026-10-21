@@ -8,7 +8,7 @@ import { useFragmentIdentifier } from '../hooks/useFragmentIdentifier';
 function ContactSection() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
-  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('/#contact');
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('contact');
 
   return (
   <section ref={sectionRef}
