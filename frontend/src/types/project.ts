@@ -9,5 +9,6 @@ export interface Project {
   repoLink?: string;
   repoIconDef?: IconDefinition;
   video?: string;
+  imageSrc?: string;
   category: number;
 }

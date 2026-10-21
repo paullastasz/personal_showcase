@@ -52,14 +52,7 @@ function ProjectsSection() {
               return (
                 <article key={project.id} className="group min-w-0 overflow-hidden border border-[#18131A] bg-white transition duration-300 hover:border-[#18131A]">
                   <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 sm:aspect-[6/3]">
-                    {project.link ? (
-                      <iframe
-                        src={project.link}
-                        title={t(project.nameWithTranslation)}
-                        loading="lazy"
-                        className="h-full w-full border-0 bg-white"
-                        referrerPolicy="strict-origin-when-cross-origin" />
-                    ) : ( project.video ? (
+                    { project.video ? (
                         <video key={project.id} 
                                controls 
                                preload="none"  
@@ -70,9 +63,18 @@ function ProjectsSection() {
                           {t("no_preview")}
                         </video>
                      ) : (
-                      <div className="flex h-full items-center justify-center info-text">
-                        {t("no_preview")}
-                      </div>
+                      project.imageSrc ? (
+                        <img src={project.imageSrc} 
+                             alt={t(project.nameWithTranslation)} 
+                             loading="lazy"
+                             decoding="async"
+                             width="1200px"
+                             height="600px"
+                             className="w-full h-full"/>
+                        ) : (
+                        <div className="flex h-full items-center justify-center info-text">
+                          {t("no_preview")}
+                        </div>
                     ))}
                   </div>
 
