@@ -63,7 +63,7 @@
 
 .small-text {
   font-family: var(--font-light);
-  font-size: 0.8rem; /* screen width: < 640px */
+  font-size: 0.9rem; /* screen width: < 640px */
   line-height: 1.5;
   cursor: default;
 }
@@ -122,10 +122,6 @@
 
   .menu-option {
     font-size: 1.7rem;
-  }
-
-  .small-text {
-    font-size: 0.9rem;
   }
 
   .footer-text {
