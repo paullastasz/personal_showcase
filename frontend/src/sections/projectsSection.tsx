@@ -68,8 +68,6 @@ function ProjectsSection() {
                              alt={t(project.nameWithTranslation)} 
                              loading="lazy"
                              decoding="async"
-                             width="1200px"
-                             height="600px"
                              className="w-full h-full"/>
                         ) : (
                         <div className="flex h-full items-center justify-center info-text">
