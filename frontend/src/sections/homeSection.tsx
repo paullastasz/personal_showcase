@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import LanguageSwitcher from "../components/languageSwitcher";
 import Name from "../components/name";
 import Nav from "../components/nav";
