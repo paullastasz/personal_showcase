@@ -19,7 +19,7 @@ function HomeSection() {
           <source
             src="/videos/7794279-Uhd 3840 2160 25Fps_desktop.mp4"
             type="video/mp4"
-            media="(min-width: 240px)"
+            media="(min-width: 640px)"
           />
           <source
             src="/videos/7794279-Uhd 3840 2160 25Fps_mobile.mp4"
