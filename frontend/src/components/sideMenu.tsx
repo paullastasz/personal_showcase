@@ -94,7 +94,7 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
                       ? themeColor === ThemeColor.Dark
                         ? "font-semibold text-[var(--dark-color)]"
                         : "font-semibold text-[var(--white-color)]"
-                      : "text-neutral-400"}`}>
+                      : "text-neutral-700"}`}>
                   {item.name}
                 </span>
               </button>
