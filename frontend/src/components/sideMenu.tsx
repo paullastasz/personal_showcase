@@ -146,7 +146,7 @@ function SideMenu({items, activeId, onSelect, ariaLabel, themeColor, heightLine}
                           : "text-text-white"}`
                     : themeColor === ThemeColor.Dark
                           ? "text-neutral-600 group-hover"
-                          : "text-neutral-400 group-hover"}`} >
+                          : "text-neutral-300 md:text-neutral-400 group-hover"}`} >
                 {item.name}
               </span>
             </button>

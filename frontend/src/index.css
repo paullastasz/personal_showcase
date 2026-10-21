@@ -92,7 +92,7 @@
   font-family: var(--font-basic);
   font-size: 0.65rem; /* screen width: < 640px */
   cursor: default;
-  opacity: 50%;
+  opacity: 65%;
   font-weight: 100;
   text-transform: uppercase;
 }
