@@ -17,15 +17,11 @@ function LanguageSwitcher() {
   }
  
   const handleLangChangeBySwitcher = (lang: Language): void => {
-      i18n.changeLanguage(lang.LANG_CODE);
       sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
-
       const currentLang = window.location.pathname.split('/')[1];
 
-      const targetUrl = `/${lang.LANG_CODE}/${window.location.search}${window.location.hash}`;
-
       if (currentLang !== lang.LANG_CODE) {
-        window.location.href = targetUrl;
+        window.location.href = `/${lang.LANG_CODE}/${window.location.search}${window.location.hash}`;
       }
   }
 
