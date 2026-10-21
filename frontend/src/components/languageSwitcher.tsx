@@ -1,5 +1,5 @@
 
-import {  useEffect, useState } from 'react';
+import {  useState } from 'react';
 import '../assets/css/font.css';
 import { useTranslation } from "react-i18next";
 import { EN_LANG,  LANG_STORAGE_KEY, PL_LANG,} from '../config/constants';
