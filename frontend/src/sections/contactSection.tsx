@@ -33,8 +33,7 @@ function ContactSection() {
               <FontAwesomeIcon
                 icon={point.iconDef}
                 size="2xl"
-                className="shrink-0"
-                style={{ color: "rgb(255, 255, 255)" }}/>
+                className="shrink-0" />
 
               <h3 className="header-3 break-words [overflow-wrap:anywhere]">
                 {point.name ?? t(point.nameWithTranslation!)}

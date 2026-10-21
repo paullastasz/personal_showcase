@@ -1,11 +1,12 @@
 export function updateDocumentElements (
-  lang: string,
+  langCode: string,
   title: string,
   description: string,
   locale: string,
-  image: string
+  image: string,
+  image_alt: string
 ): void {
-  document.documentElement.lang = lang;
+  document.documentElement.lang = langCode;
 
   document.title = title;
 
@@ -23,4 +24,10 @@ export function updateDocumentElements (
 
   document.querySelector('meta[property="og:image"]')
     ?.setAttribute("content", image);
+
+  document.querySelector('meta[property="og:image:alt"]')
+    ?.setAttribute("content", image_alt);
+
+  document.querySelector('link[rel="canonical"]')
+    ?.setAttribute("href", `https://paulla-stasz.onrender.com/${langCode}`);
 }

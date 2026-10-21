@@ -28,7 +28,8 @@ function LanguagePage() {
         t("meta_title"),
         t("meta_description"),
         codeLang,
-        t("og_image")
+        t("og_image"),
+        t("og_image_alt")
     );
     
   }, []);
