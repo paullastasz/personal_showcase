@@ -69,7 +69,7 @@ The additionally uploaded font used is the same as it was immediately after down
 
 | Font  name | Credits      | License  | Source |
 |:-----:     |  :--------:  |:--------:|:------:|
-| [Mrs Saint Delafield](/frontend/public/font_families/Mrs_Saint_Delafield/MrsSaintDelafield-Regular.ttf) | Copyright (c) 2011 Alejandro Paul (sudtipos@sudtipos.com)  | [SIL Open Font License, Version 1.1](/frontend/public/font_families/Mrs_Saint_Delafield/OFL.txt) | [Link](https://fonts.google.com/specimen/Mrs+Saint+Delafield?preview.script=Latn) |
+| [Mrs Saint Delafield](/frontend/public/font_families/Mrs_Saint_Delafield/) | Copyright (c) 2011 Alejandro Paul (sudtipos@sudtipos.com)  | [SIL Open Font License, Version 1.1](/frontend/public/font_families/Mrs_Saint_Delafield/OFL.txt) | [Link](https://fonts.google.com/specimen/Mrs+Saint+Delafield?preview.script=Latn) |
 | [Alumni Sans Pinstripe](/frontend/public/font_families/Alumni_Sans_Pinstripe/) | Copyright 2014 The Alumni Sans Pinstripe Project Authors (https://github.com/googlefonts/alumni-sans-pinstripe)  | [SIL Open Font License, Version 1.1](/frontend/public/font_families/Alumni_Sans_Pinstripe/OFL.txt) | [Link](https://fonts.google.com/specimen/Alumni+Sans+Pinstripe) |
 
 ###  Icons

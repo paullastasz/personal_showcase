@@ -1,15 +1,11 @@
 @font-face {
   font-family: 'Mrs_Saint_Delafield';
-  src: url('/font_families/Mrs_Saint_Delafield/MrsSaintDelafield-Regular.ttf') format('truetype');
+  src: url('/font_families/Mrs_Saint_Delafield/MrsSaintDelafield-Regular.woff2') format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: 'AlumniSansPinstripe';
-  src: url('/font_families/Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.ttf') format('truetype');
+  src: url('/font_families/Alumni_Sans_Pinstripe/AlumniSansPinstripe-Regular.woff2') format("woff2");;
   font-display: swap;
-}
-
-.cc {
-  font-family: 'AlumniSansPinstripe';
 }

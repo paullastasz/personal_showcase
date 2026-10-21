@@ -54,7 +54,7 @@ function ProjectsSection() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 sm:aspect-[6/3]">
                     {project.link ? (
                       <iframe
-                        src={project.link}
+                        data-src={project.link}
                         title={t(project.nameWithTranslation)}
                         loading="lazy"
                         className="h-full w-full border-0 bg-white"
@@ -102,7 +102,7 @@ function ProjectsSection() {
                         rel="noopener noreferrer"
                         aria-label={`${t("open_project")}: ${project.nameWithTranslation}`}
                         className="shrink-0 transition-transform group-hover:translate-x-1">
-                        <FontAwesomeIcon icon={faShare} className="bg-[#18131A]" aria-hidden="true" />
+                        <FontAwesomeIcon icon={faShare} aria-hidden="true" />
                       </a>
                     )}
                     {(project.repoLink && project.repoIconDef) && (
@@ -111,7 +111,7 @@ function ProjectsSection() {
                         rel="noopener noreferrer"
                         aria-label={`${t("open_repo")}: ${project.nameWithTranslation}`}
                         className="shrink-0 transition-transform group-hover:translate-x-1">
-                        <FontAwesomeIcon icon={project.repoIconDef} className="bg-[#18131A]" aria-hidden="true" />
+                        <FontAwesomeIcon icon={project.repoIconDef} aria-hidden="true" />
                       </a>
                     )}
                   </div>

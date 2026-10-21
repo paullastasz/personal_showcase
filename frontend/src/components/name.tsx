@@ -1,8 +1,15 @@
-function Name(props: { name: string, last_name: string }) {
 
+type NameProps = {
+  name: string;
+  lastName: string;
+};
+
+function Name({ name, lastName: lastName }: NameProps) {
   return (
-    <h1 className="header-1">{props.name} {props.last_name}</h1>
-  )
+    <h1 className="header-1">
+      {name} {lastName}
+    </h1>
+  );
 }
 
-export default Name
+export default Name;

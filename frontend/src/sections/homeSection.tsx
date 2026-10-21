@@ -17,12 +17,12 @@ function HomeSection() {
               preload="metadata"
               className="absolute inset-0 -z-10 h-full w-full object-cover pointer-events-none saturate-50">
           <source
-            src="/videos/7794279-uhd_3840_2160_25fps_desktop.mp4"
+            src="/videos/7794279-Uhd 3840 2160 25Fps_desktop.mp4"
             type="video/mp4"
-            media="(min-width: 640px)"
+            media="(min-width: 240px)"
           />
           <source
-            src="/videos/7794279-uhd_3840_2160_25fps_mobile.mp4"
+            src="/videos/7794279-Uhd 3840 2160 25Fps_mobile.mp4"
             type="video/mp4"
           />
       </video>
@@ -31,7 +31,7 @@ function HomeSection() {
           <LanguageSwitcher/>
       </div>
       <div className={`flex flex-col items-center animation-show-up ${isVisible ? "is-visible" : "" }`}>
-        <Name name="Paulina" last_name="Staszewska"/>
+        <Name name="Paulina" lastName="Staszewska"/>
         <Nav></Nav>
       </div>
     </section>
