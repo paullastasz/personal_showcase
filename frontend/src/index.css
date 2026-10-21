@@ -63,7 +63,7 @@
 
 .small-text {
   font-family: var(--font-light);
-  font-size: 0.9rem; /* screen width: < 640px */
+  font-size: 1rem; /* screen width: < 640px */
   line-height: 1.5;
   cursor: default;
 }
@@ -155,10 +155,6 @@
 
   .header-3 {
     font-size: 1.05rem;
-  }
-
-  .small-text {
-    font-size: 1rem;
   }
 
   .info-text {
