@@ -54,7 +54,7 @@ function ProjectsSection() {
                   <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100 sm:aspect-[6/3]">
                     {project.link ? (
                       <iframe
-                        data-src={project.link}
+                        src={project.link}
                         title={t(project.nameWithTranslation)}
                         loading="lazy"
                         className="h-full w-full border-0 bg-white"
