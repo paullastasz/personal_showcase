@@ -5,14 +5,12 @@ import { useTranslation } from "react-i18next";
 import { EN_LANG,  LANG_STORAGE_KEY, PL_LANG,} from '../config/constants';
 import type { Language } from '../types/language';
 import { getLocale } from '../utils/getLocale';
-import { useNavigate } from 'react-router-dom';
 
 function LanguageSwitcher() {
   // @ts-ignore
   const { t, i18n } = useTranslation();
   const [isHidden, setHidden] = useState(true);
-  const [currentLan, setCurrentLan] = useState(getLocale(i18n.language).NORMALIZED_LAN); 
-  const navigate = useNavigate();
+  const currentLan = getLocale(i18n.resolvedLanguage ?? i18n.language).NORMALIZED_LAN; 
  
   const handleDroplist = (): void => {
       setHidden(!isHidden);
@@ -22,10 +20,13 @@ function LanguageSwitcher() {
       i18n.changeLanguage(lang.LANG_CODE);
       sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
 
-      navigate(`/${lang.LANG_CODE}`);
+      const currentLang = window.location.pathname.split('/')[1];
 
-      setCurrentLan(lang.NORMALIZED_LAN);
-      setHidden(!isHidden);
+      const targetUrl = `/${lang.LANG_CODE}/${window.location.search}${window.location.hash}`;
+
+      if (currentLang !== lang.LANG_CODE) {
+        window.location.href = targetUrl;
+      }
   }
 
   return (

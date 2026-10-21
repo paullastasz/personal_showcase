@@ -1,37 +1,66 @@
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import HomePage from "./homePage";
 import { useTranslation } from "react-i18next";
 import { getLocale } from "../utils/getLocale";
 import { EN_LANG, PL_LANG } from "../config/constants";
-import { updateDocumentElements } from "../utils/updateDocumentElements";
 
 function LanguagePage() {
   const { lang } = useParams();
-  const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const {  i18n } = useTranslation();
 
   useEffect(() => {
+    console.log('URL:', window.location.href);
+    console.log('PATH:', window.location.pathname);
+    console.log('HASH:', window.location.hash);
+    const systemLang = getLocale(i18n.resolvedLanguage ?? i18n.language).LANG_CODE;
     let codeLang = lang;
-
+    
     if (!codeLang || (lang !== PL_LANG.LANG_CODE && lang !== EN_LANG.LANG_CODE))
     {
-        codeLang = getLocale(i18n.language).LANG_CODE;
+        codeLang = systemLang;
+    }
+    if(codeLang !== systemLang)
+    {
+      i18n.changeLanguage(codeLang);
     }
 
-    navigate(`/${codeLang}`);
+    const currentLang = window.location.pathname.split('/')[1];
 
-    i18n.changeLanguage(codeLang);
+    const targetUrl = `/${codeLang}/${window.location.search}${window.location.hash}`;
+    console.log("targetUrl", targetUrl);
 
-    updateDocumentElements(
-        codeLang,
-        t("meta_title"),
-        t("meta_description"),
-        codeLang,
-        t("og_image"),
-        t("og_image_alt")
-    );
+    if (currentLang !== codeLang) {
+      window.location.href = targetUrl;
+    }
     
+  }, []);
+
+  useEffect(() => {
+    let attempts = 0;
+    let frameId: number;
+
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const id = decodeURIComponent(hash.slice(1));
+      const element = document.getElementById(id);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      if (attempts < 60) {
+        attempts++;
+        frameId = requestAnimationFrame(scrollToHash);
+      }
+    };
+
+    frameId = requestAnimationFrame(scrollToHash);
+
+    return () => cancelAnimationFrame(frameId);
   }, []);
 
   return <HomePage />;

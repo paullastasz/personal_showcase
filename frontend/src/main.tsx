@@ -5,6 +5,9 @@ import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
 import i18n from './translation.tsx';
 
+import './assets/css/animation.css';
+import './assets/css/font.css';
+
 const root = createRoot(document.getElementById('root')!);
 let rendered = false;
 

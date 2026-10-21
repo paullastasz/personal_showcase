@@ -5,7 +5,7 @@ import { useFragmentIdentifier } from "../hooks/useFragmentIdentifier";
 
 
 function HomeSection() {
-  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('');
+  const { sectionRef, isVisible } = useFragmentIdentifier<HTMLElement>('#h');
 
   return (
     <section ref={sectionRef} id="home" aria-label="Home" className="relative h-screen grid grid:cols-2 sm:gap-y-5 md:gap-y-5 lg:gap-y-8 xl:gap-y-10 2xl:gap-y-5">

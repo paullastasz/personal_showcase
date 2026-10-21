@@ -12,7 +12,7 @@
 
 .animation-show-up {
   opacity: 0;
-  animation: show-up 1.5s ease forwards;
+  animation: show-up 3s ease forwards;
   animation-play-state: paused;
 }
 
