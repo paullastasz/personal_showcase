@@ -88,7 +88,7 @@ Icons used unchanged (with the possible exception of color and size):
 
 | Video Name | License  | Source |
 |:-----:     |  :--------:|:------:|
-| [7794279-uhd_3840_2160_25fps.mp4](/frontend/public/videos/7794279-uhd_3840_2160_25fps.mp4) | [Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/abstrakcyjny-pomarancza-ruch-farba-7794279/) |
+| [7794279-Uhd 3840 2160 25Fps_desktop.mp4](/frontend/public/videos/7794279-uhd_3840_2160_25fps_desktop.mp4) [7794279-Uhd 3840 2160 25Fps_mobile.mp4](/frontend/public/videos/7794279-uhd_3840_2160_25fps_mobile.mp4) | [Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/abstrakcyjny-pomarancza-ruch-farba-7794279/) |
 
 
 ### Personal data

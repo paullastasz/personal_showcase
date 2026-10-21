@@ -57,20 +57,16 @@ function ProjectsSection() {
                         src={project.link}
                         title={t(project.nameWithTranslation)}
                         loading="lazy"
-                        className="h-full w-full border-0 bg-white"/>
+                        className="h-full w-full border-0 bg-white"
+                        referrerPolicy="strict-origin-when-cross-origin" />
                     ) : ( project.video ? (
                         <video key={project.id} 
                                controls 
-                               preload="metadata"  
+                               preload="none"  
                                playsInline
-                               style={{ width: "100%", height: "100%" }}>
+                               className="w-full h-full object-contain">
                           <source src={project.video} 
-                                  type="video/mp4"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "contain",
-                                  }} />
+                                  type="video/mp4" />
                           {t("no_preview")}
                         </video>
                      ) : (
@@ -106,7 +102,7 @@ function ProjectsSection() {
                         rel="noopener noreferrer"
                         aria-label={`${t("open_project")}: ${project.nameWithTranslation}`}
                         className="shrink-0 transition-transform group-hover:translate-x-1">
-                        <FontAwesomeIcon icon={faShare} style={{color: "#18131A",}} aria-hidden="true" />
+                        <FontAwesomeIcon icon={faShare} className="bg-[#18131A]" aria-hidden="true" />
                       </a>
                     )}
                     {(project.repoLink && project.repoIconDef) && (
@@ -115,7 +111,7 @@ function ProjectsSection() {
                         rel="noopener noreferrer"
                         aria-label={`${t("open_repo")}: ${project.nameWithTranslation}`}
                         className="shrink-0 transition-transform group-hover:translate-x-1">
-                        <FontAwesomeIcon icon={project.repoIconDef} style={{color: "#18131A"}} aria-hidden="true" />
+                        <FontAwesomeIcon icon={project.repoIconDef} className="bg-[#18131A]" aria-hidden="true" />
                       </a>
                     )}
                   </div>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "../components/languageSwitcher";
 import Name from "../components/name";
 import Nav from "../components/nav";
@@ -17,7 +18,12 @@ function HomeSection() {
               preload="metadata"
               className="absolute inset-0 -z-10 h-full w-full object-cover pointer-events-none saturate-50">
           <source
-            src="/videos/7794279-uhd_3840_2160_25fps.mp4"
+            src="/videos/7794279-uhd_3840_2160_25fps_desktop.mp4"
+            type="video/mp4"
+            media="(min-width: 640px)"
+          />
+          <source
+            src="/videos/7794279-uhd_3840_2160_25fps_mobile.mp4"
             type="video/mp4"
           />
       </video>
