@@ -43,7 +43,7 @@
     "more": "More About the Site",
     "privacy_notice": "Privacy notice",
     "project_3_name": "A fragment of a game developed as part of a university course project",
-    "privacy_notice_details": "<p>This website does not use analytics or marketing cookies and does not collect data through forms. I do not have access to visitors’ IP addresses. The website is hosted by Render.com.</p><p>The website uses the browser’s Session Storage mechanism to temporarily store information necessary for the proper functioning of features used at the user’s own request. This information is stored for the duration of the browser tab session.</p",
+    "privacy_notice_details": "<p>This website does not use analytics or marketing cookies and does not collect data through forms. As the owner of the website, I do not have access to visitors' IP addresses or information about their location. The website is hosted by Render.com.</p><p>The website uses the browser’s Session Storage mechanism to temporarily store information necessary for the proper functioning of features used at the user’s own request. This information is stored for the duration of the browser tab session.</p",
     "skill_categories": "List of skills to select",
     "about_description": "I am a computer science graduate with an interest in web application development, intuitive interface design, and game development. These are the areas in which I would most like to grow, though I am also open to learning new technologies and exploring other opportunities within the IT field.",
     "ui_ux_description": "Designing clear, aesthetically pleasing, and user-friendly websites and applications.",
