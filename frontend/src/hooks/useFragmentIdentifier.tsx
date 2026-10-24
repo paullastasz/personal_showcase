@@ -14,9 +14,6 @@ export function useFragmentIdentifier<T extends HTMLElement>(identifier: string,
             entries.forEach((entry) => {
               if (entry.isIntersecting === true && entry.intersectionRatio >= visibilityThreshold)
               {  
-                console.log("location.pathname ", location.pathname);
-                console.log("location.search ", location.search);
-                console.log("identifier ", identifier);
                 navigate(
                   {
                     pathname: location.pathname,

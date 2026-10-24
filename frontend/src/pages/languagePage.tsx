@@ -10,9 +10,7 @@ function LanguagePage() {
   const {  i18n } = useTranslation();
 
   useEffect(() => {
-    console.log('URL:', window.location.href);
-    console.log('PATH:', window.location.pathname);
-    console.log('HASH:', window.location.hash);
+
     const systemLang = getLocale(i18n.resolvedLanguage ?? i18n.language).LANG_CODE;
     let codeLang = lang;
     
@@ -24,7 +22,6 @@ function LanguagePage() {
     const currentLang = window.location.pathname.split('/')[1];
 
     const targetUrl = `/${codeLang}/${window.location.search}${window.location.hash}`;
-    console.log("targetUrl", targetUrl);
 
     if (currentLang !== codeLang) {
       window.location.href = targetUrl;
