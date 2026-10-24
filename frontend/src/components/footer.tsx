@@ -11,7 +11,7 @@ function Footer() {
       {t("more")}
     </h3>
 
-    <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="mx-auto grid w-full gap-8">
       <div className="footer-text text-justify min-w-0 break-words [overflow-wrap:anywhere]">
         <h4 className="header-4 text-center">{t("source")}</h4>
         <Trans
@@ -29,7 +29,15 @@ function Footer() {
 
       <div className="min-w-0 break-words [overflow-wrap:anywhere]">
         <h4 className="header-4 text-center">{t("privacy_notice")}</h4>
-        <p className="footer-text text-justify">{t("privacy_notice_details")}</p>
+          <div className="footer-text text-justify">
+            <Trans
+                i18nKey="privacy_notice_details"
+                components={{
+                  br: <br />,
+                  p: <p className="mb-[10px]" />,
+                }}
+              />
+          </div>
       </div>
     </div>
   </div>
