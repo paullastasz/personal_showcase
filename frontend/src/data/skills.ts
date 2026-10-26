@@ -251,4 +251,19 @@ export const skills: Skill[] = [
     name: "HTTP",
     skillTypeId: 7,
   },
+  {
+    id: 51,
+    name: "Angular",
+    skillTypeId: 3,
+  },
+  {
+    id: 52,
+    name: "GitHub Actions",
+    skillTypeId: 14,
+  },
+  {
+    id: 53,
+    name: "WCAG",
+    skillTypeId: 3,
+  },
 ];
