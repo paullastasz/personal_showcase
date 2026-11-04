@@ -2,7 +2,7 @@
 import {  useState } from 'react';
 import '../assets/css/font.css';
 import { useTranslation } from "react-i18next";
-import { EN_LANG,  LANG_STORAGE_KEY, PL_LANG,} from '../config/constants';
+import { EN_LANG, PL_LANG,} from '../config/constants';
 import type { Language } from '../types/language';
 import { getLocale } from '../utils/getLocale';
 
@@ -17,7 +17,7 @@ function LanguageSwitcher() {
   }
  
   const handleLangChangeBySwitcher = (lang: Language): void => {
-      sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
+      //sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
       const currentLang = window.location.pathname.split('/')[1];
 
       if (currentLang !== lang.LANG_CODE) {

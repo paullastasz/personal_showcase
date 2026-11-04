@@ -4,7 +4,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import en_US from "./locales/en-US/resources.json";
 import pl_PL from "./locales/pl-PL/resources.json";
-import { DEFAULT_LANG, EN_LANG, EN_US_LANG, LANG_STORAGE_KEY, PL_LANG, PL_PL_LANG } from "./config/constants";
+import { DEFAULT_LANG, EN_LANG, EN_US_LANG, PL_LANG, PL_PL_LANG } from "./config/constants";
 
 i18n
   .use(LanguageDetector)
@@ -25,8 +25,8 @@ i18n
     },
 
     detection: {
-      order: ["sessionStorage", "navigator", "htmlTag"],
-      lookupLocalStorage: LANG_STORAGE_KEY,
+      order: ["navigator", "htmlTag"],
+      //lookupLocalStorage: LANG_STORAGE_KEY,
       caches: [],
     },
 
