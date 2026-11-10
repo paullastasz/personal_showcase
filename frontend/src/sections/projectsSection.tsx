@@ -62,7 +62,7 @@ function ProjectsSection() {
         className="absolute inset-0 z-[-1] bg-gradient-to-r from-orange-950/10 via-transparent to-black/40" />
 
       {/* main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-10 xl:px-4 sm:px-0 py-10 lg:pb-20 pb-50">
+      <div className="relative z-10 w-full max-w-7xl mx-10 xl:px-4 sm:px-0 py-10 pb-60">
         {/* main grid */}
         <div className="grid grid-cols-1 min-[640px]:grid-cols-2 items-stretch"
              style={{columnGap: "32px", rowGap: "48px", }}>
