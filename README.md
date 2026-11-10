@@ -95,7 +95,7 @@ Icons used unchanged (with the possible exception of color and size):
 | Video Name | Section |License  | Source |
 |:-----:    |  :--------: |  :--------:|:------:|
 | [20670675-uhd_3840_2160_30fps.mp4](/frontend/public/videos/20670675-uhd_3840_2160_30fps.mp4) | Home | [Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/nocny-bruksela-20670675/) |
-| [15476205_1920_1080_25fps.mp4"](/frontend/public/videos/15476205_1920_1080_25fps.mp4) | About |[Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/widok-z-lotu-ptaka-na-nowoczesne-wiezowce-miasta-36498297/) |
+| [15476205_1920_1080_25fps.mp4](/frontend/public/videos/15476205_1920_1080_25fps.mp4) | About |[Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/widok-z-lotu-ptaka-na-nowoczesne-wiezowce-miasta-36498297/) |
 | [15370749_3840_2160_30fps.mp4](/frontend/public/videos/15370749_3840_2160_30fps.mp4) | Skills |[Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/nocny-widok-z-lotu-ptaka-na-panorame-chicago-36244311/) |
 | [3048227-uhd_3840_2160_30fps.mp4](/frontend/public/videos/3048227-uhd_3840_2160_30fps.mp4) | Projects |[Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/wystawa-swiatel-po-bokach-budynku-dla-przyciagania-3048227/) |
 | [1826896-hd_1920_1080_24fps.mp4](/frontend/public/videos/1826896-hd_1920_1080_24fps.mp4) | Contact |[Free](https://www.pexels.com/pl-PL/license/) | [Link](https://www.pexels.com/pl-pl/video/zdjecia-lotnicze-miasta-1826896/) |
