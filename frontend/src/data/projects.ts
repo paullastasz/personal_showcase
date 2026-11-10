@@ -1,0 +1,30 @@
+import type { Project } from "../types/project";
+import { faGithub} from '@fortawesome/free-brands-svg-icons';
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    nameWithTranslation: "project_1_name",
+    link: "https://embed.figma.com/site/9joBtM2ygC1r4cbt4dZb0z/Untitled?node-id=0-1&embed-host=share",
+    technologies: "Figma",
+    imageSrc: "/images/figma_project.webp",
+    category: 1,
+  },
+  {
+    id: 2,
+    nameWithTranslation: "project_2_name",
+    link: "https://paulla-stasz.onrender.com/",
+    repoLink: "https://github.com/paullastasz/personal_showcase",
+    repoIconDef: faGithub,
+    imageSrc: "/images/personal_showcase.webp",
+    technologies: "React i TypeScript",
+    category: 2,
+  },
+  {
+    id: 3,
+    nameWithTranslation: "project_3_name",
+    video: "/videos/bf13cdf2-67d9-485e-a198-d957febbd0b4.mp4",
+    technologies: "Unreal Engine",
+    category: 4,
+  },
+];

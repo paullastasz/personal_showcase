@@ -1,0 +1,42 @@
+@keyframes show-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animation-show-up {
+  opacity: 0;
+  animation: show-up 3s ease forwards;
+  animation-play-state: paused;
+}
+
+.app-loaded .animation-show-up.is-visible {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+  }
+
+  .animation-show-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

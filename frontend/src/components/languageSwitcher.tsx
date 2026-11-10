@@ -1,0 +1,48 @@
+
+import {  useState } from 'react';
+import '../assets/css/font.css';
+import { useTranslation } from "react-i18next";
+import { EN_LANG, PL_LANG,} from '../config/constants';
+import type { Language } from '../types/language';
+import { getLocale } from '../utils/getLocale';
+
+function LanguageSwitcher() {
+  // @ts-ignore
+  const { t, i18n } = useTranslation();
+  const [isHidden, setHidden] = useState(true);
+  const currentLan = getLocale(i18n.resolvedLanguage ?? i18n.language).NORMALIZED_LAN; 
+ 
+  const handleDroplist = (): void => {
+      setHidden(!isHidden);
+  }
+ 
+  const handleLangChangeBySwitcher = (lang: Language): void => {
+      //sessionStorage.setItem(LANG_STORAGE_KEY, lang.LANG_CODE);
+      const currentLang = window.location.pathname.split('/')[1];
+
+      if (currentLang !== lang.LANG_CODE) {
+        window.location.href = `/${lang.LANG_CODE}/${window.location.search}${window.location.hash}`;
+      }
+  }
+
+  return (
+    <div className='relative inline-block mt-20 mr-5 text-center sm:mt-10 sm:mr-10 sm:w-50 w-30 z-10'>
+    <button onClick={handleDroplist} 
+            aria-label={t("choose_lan")}
+            aria-expanded={!isHidden}
+            aria-haspopup="true"
+            className={`menu-option w-full p-3 sm:p-2 ${isHidden ? "" : "bg-[var(--dark-color)]"}`}>{currentLan}
+   </button>
+    <div className={`absolute left-0 top-full w-full overflow-hidden bg-[var(--light-color)]/5 shadow-xs backdrop-blur-md ${isHidden ? "hidden" : ""}`}>
+        <ul>
+            <li><button onClick={() => handleLangChangeBySwitcher(PL_LANG)} 
+                        className='menu-option block w-full p-3 sm:p-2 hover:bg-[var(--dark-color)]'>PL</button></li>
+            <li><button onClick={() => handleLangChangeBySwitcher(EN_LANG)} 
+                        className='menu-option block w-full p-3 sm:p-2 hover:bg-[var(--dark-color)]'>EN</button></li>
+        </ul>
+    </div>
+    </div>
+  )
+}
+
+export default LanguageSwitcher
