@@ -266,4 +266,9 @@ export const skills: Skill[] = [
     name: "WCAG",
     skillTypeId: 3,
   },
+    {
+    id: 54,
+    name: "Playwright",
+    skillTypeId: 9,
+  },
 ];

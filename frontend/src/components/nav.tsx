@@ -60,12 +60,17 @@ function Nav() {
                 {links.map((link, index) => (
                     <li key={link.to}
                         className="flex items-center gap-x-4 md:gap-x-7">
-                        <HashLink smooth
+                        <HashLink data-testid={`${link.to}-hash-link`} 
+                                  smooth
                                   to={link.to}
-                                  className="menu-option group relative isolate inline-flex items-center justify-center px-3 py-4 uppercase tracking-[0.18em] transition-colors duration-500">
+                                  className="menu-option group relative isolate inline-flex items-center 
+                                             justify-center px-3 py-4 uppercase tracking-[0.18em] 
+                                             transition-colors duration-500">
                             {/* spotlight */}
                             <span aria-hidden="true"
-                                  className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[110%] w-[180%] -translate-x-1/2 opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-80">
+                                  className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[110%] w-[180%] 
+                                  -translate-x-1/2 opacity-0 transition-opacity duration-700 ease-in-out 
+                                  group-hover:opacity-80">
                                 <svg viewBox="0 0 200 140"
                                      preserveAspectRatio="none"
                                      className="h-full w-full overflow-visible">

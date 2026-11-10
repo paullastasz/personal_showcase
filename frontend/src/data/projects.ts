@@ -17,7 +17,7 @@ export const projects: Project[] = [
     repoLink: "https://github.com/paullastasz/personal_showcase",
     repoIconDef: faGithub,
     imageSrc: "/images/personal_showcase.webp",
-    technologies: "React i TypeScript",
+    technologies: "React, TypeScript i Playwright",
     category: 2,
   },
   {

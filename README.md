@@ -35,7 +35,8 @@ The main technologies used are listed in the table, and the [package.json](/fron
 
 | Technology                        | Version   |  Description                         | Source   |
 | :---:                             | :---:     | :---:                                | :---:     |
-| React                             | 19.2.6    | For the frontend                    | [Link](https://react.dev/)    |
+| React                             | 19.2.6    | For frontend                    | [Link](https://react.dev/)    |
+| Playwright                             | 1.65.0    | For tests                   | [Link](https://playwright.dev/)    |
 | TypeScript                        | 6.0.2     | Programming language                 | [Link](https://www.typescriptlang.org/)   |
 | i18next                           | 26.2.0    | Language translation of the website  | [Link](https://www.npmjs.com/package/i18next?activeTab=readme)   |
 | tailwindcss                      | 4.3.5     | For faster website design            |[Link](https://tailwindcss.com/)    |
@@ -53,13 +54,18 @@ The main technologies used are listed in the table, and the [package.json](/fron
 
 ```
 frontend
-├───public - static files (additional fonts)
-└───src
-    ├───assets
-    │   ├───css - css files (page appearance and animations)
-    ├───components - reusable elements
-    ├───pages - web pages
-    └───sections - sections available on web pages
+├───public - static files (additional fonts and etc.)
+├───src
+│   ├───assets
+│   │   ├───css - css files (page appearance and animations)
+│   ├───components - reusable elements
+│   ├───data
+│   ├───hooks
+│   ├───locales
+│   ├───pages - web pages
+│   ├───types
+│   └───sections - sections available on web pages
+└───tests - tests using Playwright
 ```
 ## Assets
 
