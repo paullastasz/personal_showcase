@@ -19,8 +19,8 @@ function App() {
 
       {/* SVG sharpening filter */}
       <svg className="absolute h-0 w-0"
-            aria-hidden="true"
-            focusable="false">
+           aria-hidden="true"
+           focusable="false">
           <filter id="sharpen">
               <feConvolveMatrix order="3"
                                 kernelMatrix="

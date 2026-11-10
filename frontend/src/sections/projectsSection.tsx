@@ -45,7 +45,6 @@ function ProjectsSection() {
 
       {/* background video */}
       <ResponsiveBackground
-            image="3048227-uhd_3840_2160_30fps.webp"
             video="3048227-uhd_3840_2160_30fps.mp4"
             className="absolute inset-0 z-[-2] h-full w-full object-cover sharpen-filter" />
 

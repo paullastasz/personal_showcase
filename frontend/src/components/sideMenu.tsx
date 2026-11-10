@@ -41,23 +41,22 @@ function SideMenu({
           aria-expanded={isOpen}
           className="flex w-full items-center justify-between gap-3
                      border border-white/20 bg-[var(--orange-color)] 
-                     px-15 md:px-4 py-3 text-left text-black " >
-          <span className="nav-text nav-text-with-interaction whitespace-nowrap text-bold-[#000000]">
+                     px-15 md:px-4 py-3 text-left text-black" >
+          <span className="whitespace-nowrap text-black text-bold-[#000000]">
             {items.find((item) => item.id === activeId)?.name ??
               ariaLabel}
           </span>
 
-          <svg
-            aria-hidden="true"
-            className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2" >
-            <path
-              d="m6 9 6 6 6-6"
-              strokeLinecap="round"
-              strokeLinejoin="round" />
+          <svg aria-hidden="true"
+               className={`h-4 w-4 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               strokeWidth="2" >
+               <path
+                 d="m6 9 6 6 6-6"
+                 strokeLinecap="round"
+                 strokeLinejoin="round" />
           </svg>
         </button>
 
@@ -92,7 +91,7 @@ function SideMenu({
                       } `} />
 
                   <span
-                    className="nav-text nav-text-with-interaction whitespace-nowrap text-bold-[#000000]" >
+                    className="nav-text nav-text-with-interaction whitespace-nowrap text-black text-bold-[#000000]" >
                     {item.name}
                   </span>
                 </button>

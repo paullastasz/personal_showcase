@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 type ResponsiveBackgroundProps = {
-  image: string;
+  image?: string;
   video: string;
   className?: string;
   breakpoint?: number;
@@ -45,12 +45,14 @@ function ResponsiveBackground({
           className={className} >
           <source src={`/videos/${video}`} type="video/mp4" />
         </video>
-      ) : (
-        <img
-          src={`/images/${image}`}
-          alt=""
-          aria-hidden="true"
-          className={className} />
+      ) : ( 
+        image && (
+          <img
+            src={`/images/${image}`}
+            alt=""
+            aria-hidden="true"
+            className={className} />
+        )
       )}
     </>
   );
